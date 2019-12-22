@@ -1,10 +1,17 @@
 # docker-multi-stage-build-101
 
-## How to build each docker container image
+## Docker マルチステージビルドのサンプルコード
 
-Example:
+### 1. ビルド環境と実行環境を同じ Docker ベースイメージ上に展開した場合
 
 ```bash
-docker image build . -f docker/02_multi-stage-build/Dockerfile -t go-server-raw:dev
-docker run --rm -p 9000:9000 go-server-raw:dev
+make dbuild1
+make drun1
+```
+
+### 2. Docker のマルチステージビルドを使ってビルド環境と実行環境を分離した場合
+
+```bash
+make dbuild2
+make drun2
 ```
